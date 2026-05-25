@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cub Scout Pack 227 – Westlake Village, CA</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+–navy:   #00205B;
+–gold:   #FFB81C;
+–gold-dark: #D4930A;
+–cream:  #FDF8EF;
+–white:  #ffffff;
+–text:   #1a1a2e;
+–muted:  #4a4a6a;
+}
+
+body {
+font-family: ‘Nunito’, sans-serif;
+background: var(–cream);
+color: var(–text);
+overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+position: relative;
+width: 100%;
+height: 90vh;
+min-height: 520px;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.hero-video-wrap {
+position: absolute;
+inset: -60px;
+z-index: 0;
+pointer-events: none;
+}
+.hero-video-wrap iframe {
+width: 100%;
+height: 100%;
+border: none;
+}
+
+/* Fallback gradient when no video loads */
+.hero-fallback {
+position: absolute;
+inset: 0;
+background: linear-gradient(160deg, var(–navy) 0%, #1a3a7a 60%, #2a1a4e 100%);
+z-index: 0;
+}
+
+.hero-overlay {
+position: absolute;
+inset: 0;
+background: linear-gradient(
+to bottom,
+rgba(0,32,91,0.55) 0%,
+rgba(0,32,91,0.72) 60%,
+rgba(0,32,91,0.90) 100%
+);
+z-index: 1;
+}
+
+/* Scout compass rose watermark */
+.hero-overlay::after {
+content: ‘✦’;
+position: absolute;
+top: 12%;
+right: 8%;
+font-size: 180px;
+color: rgba(255,184,28,0.08);
+line-height: 1;
+pointer-events: none;
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+text-align: center;
+padding: 0 1.5rem;
+animation: fadeUp 0.9s ease both;
+}
+
+.hero-eyebrow {
+display: inline-block;
+background: var(–gold);
+color: var(–navy);
+font-family: ‘Nunito’, sans-serif;
+font-weight: 800;
+font-size: 0.8rem;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+padding: 0.35rem 1.1rem;
+border-radius: 2px;
+margin-bottom: 1.2rem;
+animation: fadeUp 0.9s 0.1s ease both;
+}
+
+.hero h1 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(3.8rem, 10vw, 8rem);
+color: var(–white);
+line-height: 0.95;
+letter-spacing: 0.03em;
+text-shadow: 0 4px 24px rgba(0,0,0,0.4);
+animation: fadeUp 0.9s 0.2s ease both;
+}
+
+.hero h1 span {
+color: var(–gold);
+display: block;
+}
+
+.hero-sub {
+margin-top: 1.2rem;
+font-size: clamp(1rem, 2.5vw, 1.25rem);
+color: rgba(255,255,255,0.88);
+font-weight: 600;
+max-width: 540px;
+margin-left: auto;
+margin-right: auto;
+animation: fadeUp 0.9s 0.35s ease both;
+}
+
+.hero-cta {
+display: inline-block;
+margin-top: 2rem;
+background: var(–gold);
+color: var(–navy);
+font-weight: 800;
+font-size: 1rem;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+padding: 0.85rem 2.2rem;
+border-radius: 4px;
+text-decoration: none;
+transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+animation: fadeUp 0.9s 0.5s ease both;
+}
+.hero-cta:hover {
+background: var(–gold-dark);
+transform: translateY(-2px);
+box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+}
+
+/* ── BANNER STRIP ── */
+.banner-strip {
+background: var(–gold);
+color: var(–navy);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 0 3rem;
+padding: 0.9rem 2rem;
+font-weight: 800;
+font-size: 0.85rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+}
+.banner-strip span {
+display: flex;
+align-items: center;
+gap: 0.45rem;
+padding: 0.25rem 0;
+}
+.banner-strip .dot {
+width: 6px; height: 6px;
+background: var(–navy);
+border-radius: 50%;
+flex-shrink: 0;
+}
+
+/* ── SECTIONS ── */
+section {
+padding: 5rem 1.5rem;
+}
+
+.section-inner {
+max-width: 1040px;
+margin: 0 auto;
+}
+
+.section-label {
+font-size: 0.75rem;
+font-weight: 800;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–gold-dark);
+margin-bottom: 0.6rem;
+}
+
+.section-title {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(2.4rem, 5vw, 3.6rem);
+color: var(–navy);
+line-height: 1;
+margin-bottom: 1.2rem;
+letter-spacing: 0.02em;
+}
+
+.section-body {
+font-size: 1.08rem;
+color: var(–muted);
+line-height: 1.75;
+max-width: 640px;
+}
+
+/* ── ABOUT ── */
+.about {
+background: var(–white);
+border-top: 6px solid var(–navy);
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+align-items: center;
+margin-top: 2.5rem;
+}
+
+.about-badge {
+background: var(–navy);
+border-radius: 12px;
+padding: 2.5rem;
+color: var(–white);
+position: relative;
+overflow: hidden;
+}
+
+.about-badge::before {
+content: ‘⚜’;
+position: absolute;
+bottom: -10px;
+right: -10px;
+font-size: 140px;
+color: rgba(255,184,28,0.07);
+line-height: 1;
+}
+
+.about-stat {
+margin-bottom: 1.8rem;
+}
+.about-stat:last-child { margin-bottom: 0; }
+
+.about-stat-num {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 3rem;
+color: var(–gold);
+line-height: 1;
+}
+
+.about-stat-label {
+font-size: 0.9rem;
+font-weight: 700;
+color: rgba(255,255,255,0.75);
+letter-spacing: 0.05em;
+text-transform: uppercase;
+margin-top: 0.15rem;
+}
+
+/* ── FEATURE CARDS ── */
+.features {
+background: var(–cream);
+}
+
+.cards-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1.5rem;
+margin-top: 3rem;
+}
+
+.card {
+background: var(–white);
+border-radius: 10px;
+padding: 2rem 1.75rem;
+border: 1px solid rgba(0,32,91,0.08);
+box-shadow: 0 2px 12px rgba(0,32,91,0.06);
+transition: transform 0.25s, box-shadow 0.25s;
+position: relative;
+overflow: hidden;
+}
+.card::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 4px;
+background: var(–gold);
+}
+.card:hover {
+transform: translateY(-4px);
+box-shadow: 0 10px 32px rgba(0,32,91,0.12);
+}
+
+.card-icon {
+font-size: 2.2rem;
+margin-bottom: 1rem;
+display: block;
+}
+
+.card-title {
+font-weight: 800;
+font-size: 1.05rem;
+color: var(–navy);
+margin-bottom: 0.5rem;
+}
+
+.card-text {
+font-size: 0.92rem;
+color: var(–muted);
+line-height: 1.65;
+}
+
+/* ── JOIN ── */
+.join {
+background: var(–navy);
+position: relative;
+overflow: hidden;
+}
+
+.join::before {
+content: ‘JOIN US’;
+position: absolute;
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 18vw;
+color: rgba(255,255,255,0.03);
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+white-space: nowrap;
+letter-spacing: 0.05em;
+pointer-events: none;
+}
+
+.join .section-title { color: var(–gold); }
+.join .section-body  { color: rgba(255,255,255,0.78); max-width: 560px; }
+.join .section-label { color: rgba(255,184,28,0.65); }
+
+.join-cta {
+display: inline-block;
+margin-top: 2.2rem;
+background: var(–gold);
+color: var(–navy);
+font-weight: 800;
+font-size: 1rem;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+padding: 0.9rem 2.4rem;
+border-radius: 4px;
+text-decoration: none;
+transition: background 0.2s, transform 0.2s;
+}
+.join-cta:hover {
+background: var(–gold-dark);
+transform: translateY(-2px);
+}
+
+.join-detail {
+margin-top: 1.5rem;
+color: rgba(255,255,255,0.5);
+font-size: 0.88rem;
+}
+.join-detail a {
+color: var(–gold);
+text-decoration: none;
+}
+.join-detail a:hover { text-decoration: underline; }
+
+/* ── FOOTER ── */
+footer {
+background: #00153d;
+color: rgba(255,255,255,0.4);
+text-align: center;
+padding: 2rem 1.5rem;
+font-size: 0.82rem;
+}
+footer strong { color: rgba(255,255,255,0.7); }
+
+/* ── ANIMATION ── */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+opacity: 0;
+transform: translateY(28px);
+transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 800px) {
+.about-grid  { grid-template-columns: 1fr; gap: 2.5rem; }
+.cards-grid  { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 540px) {
+.cards-grid  { grid-template-columns: 1fr; }
+.hero { height: 80vh; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HERO — replace VIDEO_URL with your .mp4 link
+     ═══════════════════════════════════════════ -->
+
+<section class="hero">
+  <div class="hero-fallback"></div>
+  <div class="hero-video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/Nf8XvPdZq5Q?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Westlake Village · Oak Park · Agoura Hills</div>
+    <h1>Pack <span>227</span></h1>
+    <p class="hero-sub">Adventure, friendship, and values — built one badge at a time.</p>
+    <a class="hero-cta" href="#join">Join Our Pack →</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     QUICK FACTS STRIP
+     ═══════════════════════════════════════════ -->
+
+<div class="banner-strip">
+  <span><span class="dot"></span> Active &amp; Growing Pack</span>
+  <span><span class="dot"></span> Meets Twice a Month</span>
+  <span><span class="dot"></span> Boys &amp; Girls Welcome</span>
+  <span><span class="dot"></span> Low Fundraising Commitment</span>
+  <span><span class="dot"></span> Agoura Hills Area</span>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+     ═══════════════════════════════════════════ -->
+
+<section class="about">
+  <div class="section-inner">
+    <p class="section-label reveal">About Us</p>
+    <h2 class="section-title reveal">A Scout Pack<br/>Built on Community</h2>
+    <p class="section-body reveal">
+      Pack 227 is a welcoming, family-driven Cub Scout pack serving the Westlake Village, Oak Park, Agoura Hills, and surrounding communities. Whether your child is joining their very first den or transferring from another pack, you'll find enthusiastic families ready to make every adventure count.
+    </p>
+
+```
+<div class="about-grid">
+  <div class="reveal">
+    <p style="font-size:1rem;color:var(--muted);line-height:1.8;">
+      Cub Scouts is about more than badges — it's about building character, making friends, and learning skills that last a lifetime. Our pack brings together kids in kindergarten through fifth grade for hands-on fun, from campfires and pinewood derbies to STEM projects and community service.
+      <br/><br/>
+      New to Scouting? No problem. No prior experience is needed — for kids <em>or</em> parents. Our experienced den leaders and pack committee are here to guide every family from day one.
+    </p>
+  </div>
+  <div class="about-badge reveal">
+    <div class="about-stat">
+      <div class="about-stat-num">2×</div>
+      <div class="about-stat-label">Monthly Pack Meetings</div>
+    </div>
+    <div class="about-stat">
+      <div class="about-stat-num">K–5</div>
+      <div class="about-stat-label">Open to Boys &amp; Girls</div>
+    </div>
+    <div class="about-stat">
+      <div class="about-stat-num">Low</div>
+      <div class="about-stat-label">Fundraising Requirements</div>
+    </div>
+    <div class="about-stat">
+      <div class="about-stat-num">100%</div>
+      <div class="about-stat-label">Volunteer-Run &amp; Family-Led</div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FEATURE CARDS
+     ═══════════════════════════════════════════ -->
+
+<section class="features">
+  <div class="section-inner">
+    <p class="section-label reveal">Why Pack 227</p>
+    <h2 class="section-title reveal">Everything a Great<br/>Scout Pack Should Be</h2>
+
+```
+<div class="cards-grid">
+
+  <div class="card reveal">
+    <span class="card-icon">🏕️</span>
+    <div class="card-title">Outdoor Adventures</div>
+    <p class="card-text">Camping trips, nature hikes, and hands-on exploration that get kids off screens and into the world around them.</p>
+  </div>
+
+  <div class="card reveal">
+    <span class="card-icon">👨‍👩‍👧‍👦</span>
+    <div class="card-title">Family-Friendly Culture</div>
+    <p class="card-text">We plan events that the whole family can enjoy — not just the scouts. Parents and siblings are always part of the fun.</p>
+  </div>
+
+  <div class="card reveal">
+    <span class="card-icon">🌟</span>
+    <div class="card-title">No Experience Needed</div>
+    <p class="card-text">First-time scouts and first-time scout families are our specialty. Every new member gets a warm welcome and plenty of support.</p>
+  </div>
+
+  <div class="card reveal">
+    <span class="card-icon">💛</span>
+    <div class="card-title">Girls &amp; Boys Welcome</div>
+    <p class="card-text">Pack 227 is proud to have a great mix of boy and girl scouts across all dens, building friendships across the whole community.</p>
+  </div>
+
+  <div class="card reveal">
+    <span class="card-icon">📅</span>
+    <div class="card-title">Twice-Monthly Meetings</div>
+    <p class="card-text">We meet twice a month — enough to build lasting bonds and earn achievements without overloading busy family schedules.</p>
+  </div>
+
+  <div class="card reveal">
+    <span class="card-icon">💰</span>
+    <div class="card-title">Low Fundraising Ask</div>
+    <p class="card-text">We keep fundraising expectations minimal so that families can focus on what matters: the experience, not the sales quotas.</p>
+  </div>
+
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     JOIN CTA
+     ═══════════════════════════════════════════ -->
+
+<section class="join" id="join">
+  <div class="section-inner">
+    <p class="section-label reveal">Get Started</p>
+    <h2 class="section-title reveal">Ready to Join<br/>the Adventure?</h2>
+    <p class="section-body reveal">
+      Pack 227 welcomes new scouts throughout the year. Reach out and we'll connect you with the right den for your child's grade, answer any questions, and invite you to our next meeting — no commitment required.
+    </p>
+    <!-- Replace href with a mailto or Google Form link -->
+    <a class="join-cta reveal" href="mailto:bsapack227@gmail.com">Contact Pack 227 →</a>
+    <p class="join-detail reveal">
+      Questions? Email us at <a href="mailto:bsapack227@gmail.com">bsapack227@gmail.com</a><br/>
+      Serving Westlake Village, Oak Park, Agoura Hills &amp; surrounding communities
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+
+<footer>
+  <strong>Cub Scout Pack 227</strong> · Westlake Village / Oak Park / Agoura Hills, CA<br/>
+  Chartered by Boy Scouts of America · © 2025 Pack 227
+</footer>
+
+<script>
+  // Scroll-reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i * 0.06) + 's';
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
