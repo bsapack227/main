@@ -413,10 +413,39 @@ transform: translateY(0);
 .cards-grid  { grid-template-columns: 1fr; }
 .hero { height: 80vh; }
 }
+
+.site-nav {
+  background: var(--navy);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: #ffffff; text-decoration: none; letter-spacing: 0.05em; }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+@media (max-width: 600px) { .nav-links { display: none; } }
 </style>
 
 </head>
 <body>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html"><span>BSA Cub Scout Pack 227</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="dens.html">How Dens Work</a></li>
+    <li><a href="uniforms.html">Uniforms</a></li>
+    <li><a href="#join">Join Us</a></li>
+  </ul>
+</nav>
 
 <!-- ═══════════════════════════════════════════
      HERO - replace VIDEO_URL with your .mp4 link
@@ -448,8 +477,8 @@ transform: translateY(0);
   <span><span class="dot"></span> Active &amp; Growing Pack</span>
   <span><span class="dot"></span> Meets Twice a Month</span>
   <span><span class="dot"></span> Boys &amp; Girls Welcome</span>
-  <span><span class="dot"></span> Low Fundraising Commitment</span>
-  <span><span class="dot"></span> Agoura Hills and Nearby Areas</span>
+  <span><span class="dot"></span> Community Service</span>
+  <span><span class="dot"></span> Agoura Hills and the Greater Conejo Valley</span>
 </div>
 
 <!-- ═══════════════════════════════════════════
@@ -461,7 +490,7 @@ transform: translateY(0);
     <p class="section-label reveal">About Us</p>
     <h2 class="section-title reveal">A Scout Pack<br/>Built on Community</h2>
     <p class="section-body reveal">
-      Pack 227 is a welcoming, family-driven Cub Scout pack serving the Agoura Hills and surrounding communities. Whether your child is joining their very first den or transferring from another pack, you'll find enthusiastic families ready to make every adventure count.
+      Pack 227 is a welcoming, family-driven Cub Scout pack serving the Agoura Hills and the Greater Conejo Valley from Thousand Oaks to Calabasas. Whether your child is joining their very first den or transferring from another pack, you'll find enthusiastic families ready to make every adventure count.
     </p>
 
 <div class="about-grid">
@@ -483,7 +512,7 @@ transform: translateY(0);
     </div>
     <div class="about-stat">
       <div class="about-stat-num">Low</div>
-      <div class="about-stat-label">Fundraising Requirements</div>
+      <div class="about-stat-label">Community Service</div>
     </div>
     <div class="about-stat">
       <div class="about-stat-num">100%</div>
@@ -536,9 +565,9 @@ transform: translateY(0);
   </div>
 
   <div class="card reveal">
-    <span class="card-icon">💰</span>
-    <div class="card-title">Low Fundraising Ask</div>
-    <p class="card-text">We keep fundraising expectations minimal so that families can focus on what matters: the experience, not the sales quotas.</p>
+    <span class="card-icon">🌍</span>
+    <div class="card-title">Community Service</div>
+    <p class="card-text">We participate in local community events such as the 4th of July parade, Reyes Adobe Parade, City Council flag ceremonies, and special projects each year.</p>
   </div>
 
 </div>
@@ -560,7 +589,7 @@ transform: translateY(0);
     <a class="join-cta reveal" href="mailto:bsapack227@gmail.com">Contact Pack 227 →</a>
     <p class="join-detail reveal">
       Questions? Email us at <a href="mailto:bsapack227@gmail.com">bsapack227@gmail.com</a><br/>
-      Serving Agoura Hills &amp; surrounding communities
+      Serving Agoura Hills &amp; surrounding communities from Thousand Oaks to Calabasas
     </p>
   </div>
 </section>

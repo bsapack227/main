@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- ═══════════════════════════════════════════
+     STEP 1: Update the page title
+     ═══════════════════════════════════════════ -->
+<title>Uniforms – Cub Scout Pack 227</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:      #00205B;
+    --gold:      #FFB81C;
+    --gold-dark: #D4930A;
+    --cream:     #FDF8EF;
+    --white:     #ffffff;
+    --text:      #1a1a2e;
+    --muted:     #4a4a6a;
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  .site-nav {
+    background: var(--navy);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--gold); }
+
+  /* ── PAGE HERO BANNER ── */
+  .page-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3a7a 100%);
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '\2726';
+    position: absolute;
+    top: -20px; right: 5%;
+    font-size: 220px;
+    color: rgba(255,184,28,0.05);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .page-hero-eyebrow {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 1.2rem;
+  }
+
+  .page-hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: 0.03em;
+  }
+  .page-hero h1 span { color: var(--gold); }
+
+  .page-hero-sub {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.75);
+    font-weight: 600;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── CONTENT AREA ── */
+  .content-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+  }
+
+  /* Section label (small caps above heading) */
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  /* Main heading style */
+  .content-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* Sub-heading style */
+  .content-subheading {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-top: 2.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* Body text */
+  .content-wrap p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  /* Bullet list */
+  .content-list {
+    list-style: none;
+    margin: 1rem 0 1.5rem;
+    padding: 0;
+  }
+  
+  .content-list a {
+  color: var(--gold-dark);
+  font-weight: 700;
+  text-decoration: underline;
+	}
+  .content-list a:hover {
+  color: var(--navy);
+  }
+  
+  .content-list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+  }
+  .content-list li::before {
+    content: '\2726';
+    color: var(--gold);
+    font-size: 0.7rem;
+    margin-top: 0.38rem;
+    flex-shrink: 0;
+  }
+
+  /* Horizontal divider */
+  .content-divider {
+    border: none;
+    border-top: 2px solid rgba(0,32,91,0.08);
+    margin: 3rem 0;
+  }
+
+  /* Highlight / callout box */
+  .callout {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 2rem 2.5rem;
+    margin: 2.5rem 0;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '\269C';
+    position: absolute;
+    bottom: -15px; right: -10px;
+    font-size: 120px;
+    color: rgba(255,184,28,0.07);
+    line-height: 1;
+  }
+  .callout p {
+    color: rgba(255,255,255,0.85) !important;
+    font-size: 1rem !important;
+    margin: 0 !important;
+  }
+  .callout strong { color: var(--gold); }
+
+  /* Gold accent box */
+  .callout-gold {
+    background: var(--gold);
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+  }
+  .callout-gold p {
+    color: var(--navy) !important;
+    font-weight: 700;
+    margin: 0 !important;
+  }
+
+  /* CTA button */
+  .btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn:hover { background: var(--gold-dark); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--navy);
+    color: var(--navy);
+    margin-left: 1rem;
+  }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #00153d;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.82rem;
+  }
+  footer strong { color: rgba(255,255,255,0.7); }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ── REVEAL ANIMATION ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .btn-outline { margin-left: 0; margin-top: 0.75rem; display: block; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAV BAR
+     Update href values to match your actual page filenames.
+     Mark the current page with class="active".
+     ═══════════════════════════════════════════ -->
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html"><span>BSA Cub Scout Pack 227</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="dens.html">How Dens Work</a></li>
+    <li><a href="uniforms.html" class="active">Uniforms</a></li>
+    <li><a href="./index.html#join">Join Us</a></li>
+    <!-- Add more pages here as needed -->
+  </ul>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     STEP 2: Update the page banner headline and subtitle
+     ═══════════════════════════════════════════ -->
+<div class="page-hero">
+  <div class="page-hero-eyebrow">BSA Cub Scout Pack 227</div>
+  <h1><span>Uniforms</span></h1>
+  <p class="page-hero-sub">Cub Scout Uniforms Explained</p>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     STEP 3: Replace the content below with your
+     actual page content. Delete any blocks you
+     don't need, or duplicate them as needed.
+	 
+	 You can add as many paragraphs as you need. Each one should be wrapped in a <code>&lt;p&gt;</code> tag and given the <code>reveal</code> class for the scroll-in animation.
+     ═══════════════════════════════════════════ -->
+<div class="content-wrap">
+
+  <!-- ── INTRO BLOCK ── -->
+  <!-- <p class="section-label reveal">Uniforms</p> -->
+  <h2 class="content-heading reveal">What Uniforms Will I need?</h2>
+  <p class="reveal">
+    Cub Scouts wear two different uniforms.
+  </p>
+  <p class="reveal">
+     1. The Field Uniform (sometimes called "Class A").</p>
+	 <ul class="content-list reveal">
+		<li>Lion Scouts (Kindergarten) wear a blue Lion t-shirt, hat, and belt. Lion dens may choose to wear an optional neckerchief.</li>
+		<li><span>Tiger, Wolf, Bear, and Webelos Scouts (1st - 4th Grades) wear the blue Cub Scout uniform shirt and blue uniform shorts or pants, blue belt, and rank-specific hat, neckerchief, neckerchief slide, and socks. Webelos Scouts also wear the <a href="https://www.scoutshop.org/cub-scout-adventures-rank-colors-660407.html">Webelos Adventure Colors</a>.</span></li>
+		<li><span>Arrow of Light Scouts (5th Grade) wear the tan Scout uniform shirt with blue shoulder loops, green uniform shorts or pants, green belt, and socks. AOL Scouts also wear the <a href="https://www.scoutshop.org/cub-scout-adventures-rank-colors-660407.html">Webelos Adventure Colors</a>. The AOL den will decide whether to wear a Scouting America hat, neckerchief, and neckerchief slide.</span></li>
+		See <a href="https://www.scouting.org/programs/cub-scouts/cub-scout-uniform/">this link</a> for more information on the Field Uniform.
+	 </ul>
+
+  <hr class="content-divider"/>
+  
+    <p class="reveal"></p>
+	 <ul class="content-list reveal">
+		2. The <b>Activity Uniform</b> (sometimes called "Class B"). This is your Pack 227 t-shirt, which you will receive after paying your Pack Dues, and your choice of shorts or pants.
+		<br><br>If you have questions about uniforms, please ask!
+	 </ul>
+	 
+	   <hr class="content-divider"/>
+
+  <!-- ── SUBHEADING + LIST ── -->
+  <h3 class="content-subheading reveal"><u>WHAT PATCHES WILL I NEED?</u></h3>
+  <!--
+  <p class="reveal">Introduce the list below with a sentence or two if helpful.</p>
+  -->
+  
+    <p class="reveal">
+     New scouts will need the following emblems and insignia:</p>
+	 <ul class="content-list reveal">
+		<li>Lion Scouts do not wear any patches on their Lion t-shirt.</li>
+		<li><span>Tiger, Wolf, Bear, and Webelos Scouts will need a <span><a href="https://www.scoutshop.org/western-los-angeles-county-council-shoulder-patch-16051.html">council shoulder patch</a><span>, <span><a href="https://www.scoutshop.org/catalogsearch/result/?q=cub+scout+unit+numeral">pack number</a></span> (white on red), <span><a href="https://www.scoutshop.org/catalogsearch/result/?q=cub+scout+den+numeral">den number</a></span>, and <span><a href="https://www.scoutshop.org/world-crest-scout-emblem-143.html">world crest emblem</a></span>. The <span><a href="https://www.scoutshop.org/1910-world-crest-ring-emblem-619748.html">world crest ring</a></span> is optional.</span></li>
+		<li><span>Arrow of Light Scouts will need a <span><a href="https://www.scoutshop.org/western-los-angeles-county-council-shoulder-patch-16051.html">council shoulder patch</a></span>, <span><a href="https://www.scoutshop.org/catalogsearch/result/?q=cub+scout+unit+numeral">pack number</a><span> (white on red), patrol patch (you will order these through your den), and <span><a href="https://www.scoutshop.org/world-crest-scout-emblem-143.html">world crest emblem</a></span>. The <span><a href="https://www.scoutshop.org/1910-world-crest-ring-emblem-619748.html">world crest ring</a></span> is optional.</li>
+		Council: Western Los Angeles County Council<br>
+		<li><span><i>NOTE: The uniforms with pre-sewn patches at the Camarillo Scout Shop have the Ventura County Council shoulder patch. Uniforms from the Van Nuys Scout Shop with pre-sewn patches will have the correct shoulder patch.</i></li>
+		Pack Number: 227<br>
+		Den Numbers (2025/26) - <i>you will keep the same den number from year-to-year</i><br>
+		<li>Lion (Kindergarten): Den 5</li>
+		<li>Tiger (1st Grade): Den 4</li>
+		<li>Wolf (2nd Grade): Den 3</li>
+		<li>Bear (3rd Grade): Den 2</li>
+		<li>Webelos (4th Grade): Den 1</li>
+		<li>Arrow of Light (5th Grade): (Patrol Name TBD)</li>
+		See <a href="https://www.scoutshop.org/blog/the-beginners-guide-to-cub-scout-uniform-insignia.html">this link</a> for information on patch and emblem placement.
+	 </ul>
+
+  <hr class="content-divider"/>
+  
+    <h3 class="content-subheading reveal"><u>WHERE TO BUY?</u></h3>
+	
+	There are two Scout Shops in our area. Scout Shop staff can help you select the appropriate uniform items, insignia, and emblems. <br><br>
+	
+	Western Los Angeles County Council <br>
+	16525 Sherman Way, C-8 <br>
+	Van Nuys, CA 91406 <br>
+	(818) 781-1296 <br>
+	Check <a href="https://bsa-la.org/scout-shop/#Van-Nuys-Scout-Store">website</a> and call to confirm hours <br> <br>
+	
+	Ventura County Council <br>
+	509 East Daily Drive <br>
+	Camarillo, CA 93010 <br>
+	(805) 482-8938 <br>
+	Check <a href="https://www.vccbsa.org/Scoutstore">website</a> and call to confirm hours <br><br>
+	
+	Uniform items may also be ordered online at <a href="https://www.scoutshop.org/">www.scoutshop.org</a>.
+	
+	  <hr class="content-divider"/>
+	  
+	  <h3 class="content-subheading reveal"><u>WHY DO CUB SCOUTS WEAR UNIFORMS?</u></h3> 
+	  
+	<p class="reveal">
+     Wearing uniforms has been a method of the Scouting movement from the beginning. Decades of experience show uniforming to have many benefits, including:</p>
+	 <ul class="content-list reveal">
+		<li><span><strong>Equality</strong>. The uniform represents a democratic ideal of equality. Scouts from various cultures and different economic levels wear the same uniform and cooperate as equals.</span></li>
+		<li><span><strong>Identification</strong>. The uniform identifies its wearer as a member of the Cub Scouts. Badges on the uniform tell other members that he or she belongs to their den, pack, and council. The uniform itself identifies a good citizen to the entire community./span></li>
+		<li><span><strong>Achievement</strong>. The uniform displays badges and other awards so the accomplishments of each Cub Scout can be immediately recognized./span></li>
+		<li><span><strong>Commitment</strong>. Wearing a uniform is a constant reminder to each Cub Scout of his or her commitment to the ideals and purposes of Cub Scouting: duty to God, loyalty to country, and helpfulness to others./span></li>
+		Our pack emphasizes the importance of wearing the correct and complete uniform on all suitable occasions and encourages all parents to do the same.<br>
+	 </ul>
+	
+
+	
+	  <hr class="content-divider"/>
+  
+  
+
+  <!-- ── SECOND SECTION ── -->
+  <!---
+  <p class="section-label reveal">More Detail</p>
+  <h2 class="content-heading reveal">Another Heading If Needed</h2>
+  <p class="reveal">
+    Use this block for a second major section on the page. You can duplicate the entire section block as many times as you like.
+  </p>
+
+  <h3 class="content-subheading reveal">Another Subheading</h3>
+  <p class="reveal">Add content here. Mix paragraphs, lists, and callout boxes freely.</p>
+  
+  -->
+
+  <!-- ── CALLOUT BOX (gold) ── -->
+  <!--
+  <div class="callout-gold reveal">
+    <p>💡 Use the gold box for quick tips, reminders, or friendly nudges — things that don't need the weight of the navy box.</p>
+  </div>
+
+  <hr class="content-divider"/>
+  
+  -->
+
+  <!-- ── CTA BUTTONS ── -->
+  <p class="reveal">Please contact Pack 227 if you're interested in learning more.</p>
+  <div class="reveal">
+    <a class="btn" href="index.html#join">Join Pack 227 →</a>
+    <a class="btn btn-outline" href="index.html">← Back to Home</a>
+  </div>
+
+</div><!-- end .content-wrap -->
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER — same on every page
+     ═══════════════════════════════════════════ -->
+<footer>
+  <strong>Cub Scout Pack 227</strong> · Westlake Village / Oak Park / Agoura Hills, CA<br/>
+  Chartered by Boy Scouts of America · &copy; 2025 Pack 227 ·
+  <a href="index.html">Home</a>
+</footer>
+
+
+<script>
+  // Scroll-reveal animation
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i * 0.07) + 's';
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
