@@ -289,10 +289,44 @@
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 600px) {
-    .nav-links { display: none; }
-    .btn-outline { margin-left: 0; margin-top: 0.75rem; display: block; text-align: center; }
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.nav-burger span {
+  display: block;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+@media (max-width: 600px) {
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--navy);
+    padding: 0.5rem 0 1rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
   }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -311,6 +345,12 @@
     <li><a href="./index.html#join">Join Us</a></li>
     <!-- Add more pages here as needed -->
   </ul>
+  
+  <button class="nav-burger" onclick="toggleNav()" aria-label="Menu">
+  <span></span>
+  <span></span>
+  <span></span>
+  </button>
 </nav>
 
 
@@ -479,6 +519,10 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => io.observe(el));
+  
+  function toggleNav() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
 </script>
 
 </body>
