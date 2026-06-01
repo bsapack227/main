@@ -431,7 +431,44 @@ transform: translateY(0);
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-@media (max-width: 600px) { .nav-links { display: none; } }
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.nav-burger span {
+  display: block;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+@media (max-width: 600px) {
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--navy);
+    padding: 0.5rem 0 1rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+  }
+}
 </style>
 
 </head>
@@ -445,6 +482,12 @@ transform: translateY(0);
     <li><a href="uniforms.html">Uniforms</a></li>
     <li><a href="#join">Join Us</a></li>
   </ul>
+  
+  <button class="nav-burger" onclick="toggleNav()" aria-label="Menu">
+  <span></span>
+  <span></span>
+  <span></span>
+  </button>
 </nav>
 
 <!-- ═══════════════════════════════════════════
@@ -616,6 +659,10 @@ transform: translateY(0);
     });
   }, { threshold: 0.12 });
   reveals.forEach(el => io.observe(el));
+  
+  function toggleNav() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
 </script>
 
 </body>
