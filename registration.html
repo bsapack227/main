@@ -7,7 +7,7 @@
 <!-- ═══════════════════════════════════════════
      STEP 1: Update the page title
      ═══════════════════════════════════════════ -->
-<title>Dens – Cub Scout Pack 227</title>
+<title>Registration – Cub Scout Pack 227</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
@@ -171,6 +171,16 @@
     margin: 1rem 0 1.5rem;
     padding: 0;
   }
+  
+  .content-list a {
+  color: var(--gold-dark);
+  font-weight: 700;
+  text-decoration: underline;
+	}
+  .content-list a:hover {
+  color: var(--navy);
+  }
+  
   .content-list li {
     display: flex;
     gap: 0.75rem;
@@ -187,6 +197,27 @@
     margin-top: 0.38rem;
     flex-shrink: 0;
   }
+  
+  .content-list-sub {
+  list-style: none;
+  margin: 0.5rem 0 0.25rem 1.25rem;
+  padding: 0;
+}
+.content-list-sub li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 0.4rem;
+}
+.content-list-sub li::before {
+  content: '›';
+  color: var(--gold-dark);
+  font-weight: 800;
+  flex-shrink: 0;
+}
 
   /* Horizontal divider */
   .content-divider {
@@ -330,9 +361,9 @@
   <a class="nav-logo" href="index.html"><span>BSA Cub Scout Pack 227</span></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="dens.html" class="active">How Dens Work</a></li>
+    <li><a href="dens.html">How Dens Work</a></li>
     <li><a href="uniforms.html">Uniforms</a></li>
-		<li><a href="registration.html">Registration</a></li>
+	<li><a href="registration.html" class="active">Registration</a></li>
     <li><a href="./index.html#join">Join Us</a></li>
     <!-- Add more pages here as needed -->
   </ul>
@@ -350,8 +381,8 @@
      ═══════════════════════════════════════════ -->
 <div class="page-hero">
   <div class="page-hero-eyebrow">BSA Cub Scout Pack 227</div>
-  <h1><span>Dens</span></h1>
-  <p class="page-hero-sub">Cub Scout Organization Explained</p>
+  <h1><span>Registration</span></h1>
+  <p class="page-hero-sub">Are you ready to become a Cub Scout with Pack 227?</p>
 </div>
 
 
@@ -365,76 +396,35 @@
 <div class="content-wrap">
 
   <!-- ── INTRO BLOCK ── -->
-  <!-- <p class="section-label reveal">Dens</p> -->
-  <h2 class="content-heading reveal">Cub Scout Organization Explained</h2>
+  <!-- <p class="section-label reveal">Uniforms</p> -->
+  <!-- <h2 class="content-heading reveal">What Uniforms Will I need?</h2> -->
   <p class="reveal">
-    Cub Scouts is for girls and boys from kindergarten through fifth grade. A Cub Scout Pack is made up of Dens, organized by grade level. Each Den works separately on a number of age-appropriate Adventures, and scouts earn patches and belt loops for completing these Adventures. All of the Dens, collectively, make up the Pack.
+    Welcome to our pack website! Whether you are new to scouting, new to Pack 227, or a returning scout, this website has everything you need to know about our pack. Please feel free to contact us at BSAPack227@gmail.com if you have any questions or would like more information.
   </p>
   <p class="reveal">
-     The Pack is led by a Cubmaster and Committee Chairperson, and each Den is led by two Den Leaders, all of whom are parent volunteers.
-  </p>
-
-  <hr class="content-divider"/>
-
-  <!-- ── SUBHEADING + LIST ── -->
-  <h3 class="content-subheading reveal">Our Pack includes the following Dens. <u>Each scout must be accompanied by an Adult Partner (usually a parent) during all activities.</u></h3>
-  <!--
-  <p class="reveal">Introduce the list below with a sentence or two if helpful.</p>
-  -->
-  
-  <!--
-  <ul class="content-list reveal">
-    <li>Kindergarten – LION</li>
-    <li>First Grade – TIGER</li>
-    <li>Second Grade – WOLF</li>
-    <li>Third Grade – BEAR</li>
-	<li>Fourth Grade – WEBELOS</li>
-	<li>Fifth Grade - ARROW OF LIGHT</li>
-  </ul>
-  -->
-
-  <!-- ── CALLOUT BOX (navy) ── -->
-  <div class="callout reveal">
-    <p><strong><center><img src="lion-logo.webp"><br>Lion Den:</strong> The Lion Den is for Cub Scouts who are in kindergarten.</center></p>
-  </div>
-
-  <hr class="content-divider"/>
-  
-    <!-- ── CALLOUT BOX (navy) ── -->
-  <div class="callout reveal">
-    <p><strong><center><img src="tiger-logo.webp"><br>Tiger Den:</strong> The Tiger Den is for Cub Scouts who are in first grade.</center></p>
-  </div>
-
-  <hr class="content-divider"/>
-  
-      <!-- ── CALLOUT BOX (navy) ── -->
-  <div class="callout reveal">
-    <p><strong><center><img src="wolf-logo.webp"><br>Wolf Den:</strong> The Wolf Den is for Cub Scouts who are in second grade.</center></p>
-  </div>
-
-  <hr class="content-divider"/>
-  
-      <!-- ── CALLOUT BOX (navy) ── -->
-  <div class="callout reveal">
-    <p><strong><center><img src="bear-logo.webp"><br>Bear Den:</strong> The Bear Den is for Cub Scouts who are in third grade.</center></p>
-  </div>
-
-  <hr class="content-divider"/>
-  
-      <!-- ── CALLOUT BOX (navy) ── -->
-  <div class="callout reveal">
-    <p><strong><center><img src="webelos-logo.webp"><br>WEBELOS Den:</strong> The Webelos Den is for Cub Scouts in fourth grade. "Webelos" stands for "<strong><b>WE</b></strong>'ll <strong><b>BE</b></strong> <strong><b>LO</b></strong>yal Scouts!"</center></p>
-  </div>
-
-  <hr class="content-divider"/>
-  
-      <!-- ── CALLOUT BOX (navy) ── -->
-  <div class="callout reveal">
-    <p><strong><center><img src="aol-logo.gif"><br>Arrow Of Light Den:</strong> The Arrow of Light Den is for Cub Scouts in fifth grade.</center></p>
-  </div>
-
-  <hr class="content-divider"/>
-  
+     If you're ready to registrer, please complete the following steps:</p>
+	 <ul class="content-list reveal">
+		<li><span><b>STEP 1 (BSA Registration):</b> Complete the <a href="https://my.scouting.org/VES/OnlineReg/1.0.0/?tu=UF-MB-051paa0227">online Scouting America application</a> and pay your Scouting America Annual Membership Fee ($160*).</span></li>
+		<ul class="content-list-sub">
+			<li>Scouting America Annual Membership Fees are set by Scouting America (national) and Western Los Angeles County Council (local) and are paid directly to Scouting America during the online application or renewal process. These fees do not go to our pack.</li>
+			<li>You may elect to subscribe to Scout Life magazine (optional) for an additional fee.</li>
+			<li>Scouting America also assesses a 3% administrative fee.</li>
+		</ul>
+		<li><span><b>STEP 2 (Pack Dues):</b> Send Pack 227 your annual pack dues via Zelle (BSAPack227@gmail.com) or bring a check (made out to Cub Scout Pack 227) to our next meeting. Be sure to include a comment with your scout's name!</u></span></li>
+		<ul class="content-list-sub">
+			<li><u>Please contact BSAPack227@gmail.com for the current pack dues amount, which are calculated annually.</u></li>
+			<li>Pack Dues pay for our program costs, including a pack t-shirt, den supplies, all Scouting awards earned throughout the year (badges of rank, adventure loops and pins, and other awards), pinewood derby, campsite reservation fees, event space and entertainment for the Blue & Gold dinner, and more.</li>
+		</ul>
+		<li><span><b>Returning Scouts:</b></span></li>
+		<ul class="content-list-sub">
+			<li>If you are a returning scout, your Scouting America Annual Membership Fees are now paid directly to BSA through an online renewal process.</li>
+			<li>You will receive emails directly from Scouting America starting approximately 60 days before your membership expiration date with a link and instructions on how to renew your membership.</li>
+		</ul>
+	 </ul>
+	 
+	 <p>
+	 
+	 <center><img src="cub-image.png"><p></center>
   
 
   <!-- ── SECOND SECTION ── -->
