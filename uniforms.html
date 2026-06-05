@@ -291,21 +291,13 @@
   /* ── RESPONSIVE ── */
 .nav-burger {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
   background: none;
   border: none;
   cursor: pointer;
+  color: var(--white);
+  font-size: 1.8rem;
+  line-height: 1;
   padding: 0;
-}
-.nav-burger span {
-  display: block;
-  height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: all 0.3s ease;
 }
 @media (max-width: 600px) {
   .nav-burger { display: flex; }
@@ -347,11 +339,7 @@
     <!-- Add more pages here as needed -->
   </ul>
   
-  <button class="nav-burger" onclick="toggleNav()" aria-label="Menu">
-  <span></span>
-  <span></span>
-  <span></span>
-  </button>
+<button class="nav-burger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
 </nav>
 
 
@@ -393,7 +381,7 @@
   
     <p class="reveal"></p>
 	 <ul class="content-list reveal">
-		2. The <b>Activity Uniform</b> (sometimes called "Class B"). This is your Pack 227 t-shirt, which you will receive after paying your Pack Dues, and your choice of shorts or pants.
+		2. The <b>Activity Uniform</b> (sometimes called "Class B"). This is your Pack 227 t-shirt, which you will receive after paying your Pack Dues.
 		<br><br>If you have questions about uniforms, please ask!
 	 </ul>
 	 
@@ -409,19 +397,18 @@
      New scouts will need the following emblems and insignia:</p>
 	 <ul class="content-list reveal">
 		<li>Lion Scouts do not wear any patches on their Lion t-shirt.</li>
-		<li><span>Tiger, Wolf, Bear, and Webelos Scouts will need a <span><a href="https://www.scoutshop.org/western-los-angeles-county-council-shoulder-patch-16051.html">council shoulder patch</a><span>, <span><a href="https://www.scoutshop.org/catalogsearch/result/?q=cub+scout+unit+numeral">pack number</a></span> (white on red), <span><a href="https://www.scoutshop.org/catalogsearch/result/?q=cub+scout+den+numeral">den number</a></span>, and <span><a href="https://www.scoutshop.org/world-crest-scout-emblem-143.html">world crest emblem</a></span>. The <span><a href="https://www.scoutshop.org/1910-world-crest-ring-emblem-619748.html">world crest ring</a></span> is optional.</span></li>
-		<li><span>Arrow of Light Scouts will need a <span><a href="https://www.scoutshop.org/western-los-angeles-county-council-shoulder-patch-16051.html">council shoulder patch</a></span>, <span><a href="https://www.scoutshop.org/catalogsearch/result/?q=cub+scout+unit+numeral">pack number</a><span> (white on red), patrol patch (you will order these through your den), and <span><a href="https://www.scoutshop.org/world-crest-scout-emblem-143.html">world crest emblem</a></span>. The <span><a href="https://www.scoutshop.org/1910-world-crest-ring-emblem-619748.html">world crest ring</a></span> is optional.</li>
+		<li><span>Tiger, Wolf, Bear, and Webelos Scouts will need a <span><a href="https://www.scoutshop.org/western-los-angeles-county-council-shoulder-patch-16051.html">council shoulder patch</a><span>, <span><a href="https://www.scoutshop.org/catalogsearch/result/?q=cub+scout+unit+numeral">pack number</a></span> (white on red), <span><a href="https://www.scoutshop.org/catalogsearch/result/?q=cub+scout+den+numeral">den number</a></span>, and <span>world crest emblem</span>. The <span><a href="https://www.scoutshop.org/1910-world-crest-ring-emblem-619748.html">world crest ring</a></span> is optional.</span></li>
+		<li><span>Arrow of Light Scouts will need a <span><a href="https://www.scoutshop.org/western-los-angeles-county-council-shoulder-patch-16051.html">council shoulder patch</a></span>, <span><a href="https://www.scoutshop.org/catalogsearch/result/?q=cub+scout+unit+numeral">pack number</a><span> (white on red), patrol patch (you will order these through your den), and <span>world crest emblem</span>. The <span><a href="https://www.scoutshop.org/1910-world-crest-ring-emblem-619748.html">world crest ring</a></span> is optional.</li>
 		Council: Western Los Angeles County Council<br>
 		<li><span><i>NOTE: The uniforms with pre-sewn patches at the Camarillo Scout Shop have the Ventura County Council shoulder patch. Uniforms from the Van Nuys Scout Shop with pre-sewn patches will have the correct shoulder patch.</i></li>
 		Pack Number: 227<br>
-		Den Numbers (2025/26) - <i>you will keep the same den number from year-to-year</i><br>
-		<li>Lion (Kindergarten): Den 5</li>
-		<li>Tiger (1st Grade): Den 4</li>
-		<li>Wolf (2nd Grade): Den 3</li>
-		<li>Bear (3rd Grade): Den 2</li>
-		<li>Webelos (4th Grade): Den 1</li>
-		<li>Arrow of Light (5th Grade): (Patrol Name TBD)</li>
-		See <a href="https://www.scoutshop.org/blog/the-beginners-guide-to-cub-scout-uniform-insignia.html">this link</a> for information on patch and emblem placement.
+		Den Numbers (2026/27) - <i>you will keep the same den number from year-to-year</i><br>
+		<li>Lion (Kindergarten): Den 6</li>
+		<li>Tiger (1st Grade): Den 5</li>
+		<li>Wolf (2nd Grade): Den 4</li>
+		<li>Bear (3rd Grade): Den 3</li>
+		<li>Webelos (4th Grade): Den 2</li>
+		<li>Arrow of Light (5th Grade): Den 1 (Patrol Name TBD)</li>
 	 </ul>
 
   <hr class="content-divider"/>
@@ -434,13 +421,13 @@
 	16525 Sherman Way, C-8 <br>
 	Van Nuys, CA 91406 <br>
 	(818) 781-1296 <br>
-	Check <a href="https://bsa-la.org/scout-shop/#Van-Nuys-Scout-Store">website</a> and call to confirm hours <br> <br>
+	<br> <br>
 	
 	Ventura County Council <br>
 	509 East Daily Drive <br>
 	Camarillo, CA 93010 <br>
 	(805) 482-8938 <br>
-	Check <a href="https://www.vccbsa.org/Scoutstore">website</a> and call to confirm hours <br><br>
+	<br><br>
 	
 	Uniform items may also be ordered online at <a href="https://www.scoutshop.org/">www.scoutshop.org</a>.
 	
@@ -452,9 +439,9 @@
      Wearing uniforms has been a method of the Scouting movement from the beginning. Decades of experience show uniforming to have many benefits, including:</p>
 	 <ul class="content-list reveal">
 		<li><span><strong>Equality</strong>. The uniform represents a democratic ideal of equality. Scouts from various cultures and different economic levels wear the same uniform and cooperate as equals.</span></li>
-		<li><span><strong>Identification</strong>. The uniform identifies its wearer as a member of the Cub Scouts. Badges on the uniform tell other members that he or she belongs to their den, pack, and council. The uniform itself identifies a good citizen to the entire community./span></li>
-		<li><span><strong>Achievement</strong>. The uniform displays badges and other awards so the accomplishments of each Cub Scout can be immediately recognized./span></li>
-		<li><span><strong>Commitment</strong>. Wearing a uniform is a constant reminder to each Cub Scout of his or her commitment to the ideals and purposes of Cub Scouting: duty to God, loyalty to country, and helpfulness to others./span></li>
+		<li><span><strong>Identification</strong>. The uniform identifies its wearer as a member of the Cub Scouts. Badges on the uniform tell other members that he or she belongs to their den, pack, and council. The uniform itself identifies a good citizen to the entire community.</span></li>
+		<li><span><strong>Achievement</strong>. The uniform displays badges and other awards so the accomplishments of each Cub Scout can be immediately recognized.</span></li>
+		<li><span><strong>Commitment</strong>. Wearing a uniform is a constant reminder to each Cub Scout of his or her commitment to the ideals and purposes of Cub Scouting: duty to God, loyalty to country, and helpfulness to others.</span></li>
 		Our pack emphasizes the importance of wearing the correct and complete uniform on all suitable occasions and encourages all parents to do the same.<br>
 	 </ul>
 	
@@ -502,7 +489,7 @@
      ═══════════════════════════════════════════ -->
 <footer>
   <strong>Cub Scout Pack 227</strong> · Westlake Village / Oak Park / Agoura Hills, CA<br/>
-  Chartered by Boy Scouts of America · &copy; 2025 Pack 227 ·
+  Chartered by Boy Scouts of America · &copy; 2026 Pack 227 ·
   <a href="index.html">Home</a>
 </footer>
 

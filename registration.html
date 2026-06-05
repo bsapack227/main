@@ -312,22 +312,15 @@
   /* ── RESPONSIVE ── */
 .nav-burger {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
   background: none;
   border: none;
   cursor: pointer;
+  color: var(--white);
+  font-size: 1.8rem;
+  line-height: 1;
   padding: 0;
 }
-.nav-burger span {
-  display: block;
-  height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
+
 @media (max-width: 600px) {
   .nav-burger { display: flex; }
   .nav-links {
@@ -368,11 +361,7 @@
     <!-- Add more pages here as needed -->
   </ul>
   
-  <button class="nav-burger" onclick="toggleNav()" aria-label="Menu">
-  <span></span>
-  <span></span>
-  <span></span>
-  </button>
+<button class="nav-burger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
 </nav>
 
 
@@ -465,7 +454,7 @@
      ═══════════════════════════════════════════ -->
 <footer>
   <strong>Cub Scout Pack 227</strong> · Westlake Village / Oak Park / Agoura Hills, CA<br/>
-  Chartered by Boy Scouts of America · &copy; 2025 Pack 227 ·
+  Chartered by Boy Scouts of America · &copy; 2026 Pack 227 ·
   <a href="index.html">Home</a>
 </footer>
 
