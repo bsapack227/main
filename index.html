@@ -169,16 +169,17 @@ letter-spacing: 0.1em;
 text-transform: uppercase;
 }
 .banner-strip span {
-display: flex;
-align-items: center;
-gap: 0.45rem;
-padding: 0.25rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  padding: 0.25rem 0;
 }
 .banner-strip .dot {
-width: 6px; height: 6px;
-background: var(--navy);
-border-radius: 50%;
-flex-shrink: 0;
+  width: 6px; height: 6px;
+  background: var(--navy);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
 }
 
 @media (max-width: 600px) {
@@ -248,14 +249,16 @@ position: relative;
 overflow: hidden;
 }
 
-.about-badge::before {
-content: '\269C';
-position: absolute;
-bottom: -10px;
-right: -10px;
-font-size: 140px;
-color: rgba(255,184,28,0.07);
-line-height: 1;
+.badge-watermark {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 120px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  .badge-watermark { width: 60px; opacity: 0.08; }
 }
 
 .about-stat {
@@ -469,6 +472,11 @@ transform: translateY(0);
     padding: 0.75rem 2rem;
     font-size: 0.9rem;
   }
+  .about-badge::before {
+  font-size: 60px;
+  top: -5px;
+  right: -5px;
+}
 }
 </style>
 
@@ -559,6 +567,7 @@ transform: translateY(0);
       <div class="about-stat-num">100%</div>
       <div class="about-stat-label">Volunteer-Run &amp; Family-Led</div>
     </div>
+	<img src="BSA-Logo-Color.png" class="badge-watermark" alt=""/>
   </div>
 </div>
 </div>
