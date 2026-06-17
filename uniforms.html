@@ -419,7 +419,7 @@
 		const year = now.getFullYear();
 	  
 		// If we're in Jan–Aug, we're still in the school year that started last fall
-		const schoolYear = month >= 7 ? year : year - 1;
+		const schoolYear = month >= 5 ? year : year - 1;
 	  
 		const yearsPassed = schoolYear - startYear;
 		const denNumber = ((startDen - 1 + yearsPassed) % totalDens) + 1;
