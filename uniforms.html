@@ -403,13 +403,49 @@
 		<li><span><i>NOTE: The uniforms with pre-sewn patches at the Camarillo Scout Shop have the Ventura County Council shoulder patch. Uniforms from the Van Nuys Scout Shop with pre-sewn patches will have the correct shoulder patch.</i></li>
 		Pack Number: 227<br>
 		Den Numbers (2026/27) - <i>you will keep the same den number from year-to-year</i><br>
-		<li>Lion (Kindergarten): Den 6</li>
-		<li>Tiger (1st Grade): Den 5</li>
-		<li>Wolf (2nd Grade): Den 4</li>
-		<li>Bear (3rd Grade): Den 3</li>
-		<li>Webelos (4th Grade): Den 2</li>
-		<li>Arrow of Light (5th Grade): Den 1 (Patrol Name TBD)</li>
+		<li>Lion (Kindergarten): Den <span id="lion-den-number"></span></li>
+		<li>Tiger (1st Grade): Den <span id="tiger-den-number"></span></li>
+		<li>Wolf (2nd Grade): Den <span id="wolf-den-number"></span></li>
+		<li>Bear (3rd Grade): Den <span id="bear-den-number"></span></li>
+		<li>Webelos (4th Grade): Den <span id="webelos-den-number"></span></li>
+		<li>Arrow of Light (5th Grade): Den <span id="aol-den-number"></span> (Patrol Name TBD)</li>
 	 </ul>
+	 
+	<script>
+	function getCurrentDen(startYear, startDen, totalDens) {
+		// School year starts in September
+		const now = new Date();
+		const month = now.getMonth(); // 0 = January
+		const year = now.getFullYear();
+	  
+		// If we're in Jan–Aug, we're still in the school year that started last fall
+		const schoolYear = month >= 7 ? year : year - 1;
+	  
+		const yearsPassed = schoolYear - startYear;
+		const denNumber = ((startDen - 1 + yearsPassed) % totalDens) + 1;
+	  
+		return denNumber;
+	}
+
+	// Configuration: Den 1 started in the 2025–2026 school year, 6 dens total
+	const lion_den = getCurrentDen(2025, 5, 6);
+	document.getElementById("lion-den-number").textContent = lion_den;
+	
+	const tiger_den = getCurrentDen(2025, 4, 6);
+	document.getElementById("tiger-den-number").textContent = tiger_den;
+	
+	const wolf_den = getCurrentDen(2025, 3, 6);
+	document.getElementById("wolf-den-number").textContent = wolf_den;
+	
+	const bear_den = getCurrentDen(2025, 2, 6);
+	document.getElementById("bear-den-number").textContent = bear_den;
+	
+	const webelos_den = getCurrentDen(2025, 1, 6);
+	document.getElementById("webelos-den-number").textContent = webelos_den;
+	
+	const aol_den = getCurrentDen(2025, 6, 6);
+	document.getElementById("aol-den-number").textContent = aol_den;
+	</script>
 
   <hr class="content-divider"/>
   
@@ -489,7 +525,7 @@
      ═══════════════════════════════════════════ -->
 <footer>
   <strong>Cub Scout Pack 227</strong> · Westlake Village / Oak Park / Agoura Hills, CA<br/>
-  Chartered by Boy Scouts of America · &copy; 2026 Pack 227 ·
+  Chartered by Boy Scouts of America · &copy; <script>document.write(new Date().getFullYear());</script> Pack 227 ·
   <a href="index.html">Home</a>
 </footer>
 
