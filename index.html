@@ -530,6 +530,41 @@ transform: translateY(0);
   <span><span class="dot"></span> Agoura Hills and the Greater Conejo Valley</span>
 </div>
 
+<!-- ROCKET ADADEMY AD ADDITION -->
+<!-- ═══════════════════════════════════════════
+     EVENT POSTER
+     ═══════════════════════════════════════════ -->
+
+<section style="background: var(--cream); padding: 3rem 1.5rem;">
+  <div class="section-inner" style="text-align: center;">
+    <p class="section-label reveal">Upcoming Event</p>
+    <h2 class="section-title reveal">Join Us This Summer!</h2>
+	<p class="reveal" style="margin-top: 0.6rem; font-size: 1rem; color: var(--muted); font-weight: 600;">
+      📅 Sunday, August 23 &nbsp;·&nbsp; 3:30–5:00 PM &nbsp;·&nbsp; Morrison Park<br/>
+      Free admission · Boys &amp; Girls welcome · Refreshments provided
+    </p>
+<!-- Poster image (clickable) -->
+<img
+  src="https://bsapack227.com/media/Rocket_Academy_2026.jpg"
+  alt="Rocket Academy – Sunday, August 23, 2026 · 3:30–5:00 PM · Morrison Park · Free event, boys & girls welcome, refreshments provided"
+  class="reveal"
+  onclick="openLightbox()"
+  style="max-width: 520px; width: 100%; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); margin-top: 1rem; cursor: pointer;"
+/>
+
+<!-- Lightbox -->
+<div id="poster-lightbox" onclick="closeLightbox()" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:999; align-items:flex-start; justify-content:center; padding:3rem 1.5rem; overflow-y:auto;">
+  <img
+    src="https://bsapack227.com/media/Rocket_Academy_2026.jpg"
+    alt="Rocket Academy poster – full size"
+    style="width:90vw; max-width:860px; height:auto; border-radius:8px; box-shadow:0 12px 48px rgba(0,0,0,0.5);"
+  />
+  <button onclick="closeLightbox()" style="position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; color:white; font-size:2.2rem; cursor:pointer; line-height:1;">✕</button>
+</div>
+  </div>
+</section>
+<!-- ROCKET ADADEMY AD ADDITION -->
+
 <!-- ═══════════════════════════════════════════
      ABOUT
      ═══════════════════════════════════════════ -->
@@ -672,6 +707,17 @@ transform: translateY(0);
   function toggleNav() {
   document.querySelector('.nav-links').classList.toggle('open');
 }
+
+<!-- ROCKET ADADEMY AD 2026 -->
+function openLightbox() {
+  document.getElementById('poster-lightbox').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('poster-lightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+<!-- ROCKET ACADEMY AD 2026 -->
 </script>
 
 </body>
